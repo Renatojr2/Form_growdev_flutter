@@ -11,9 +11,17 @@ class _HomePageState extends State<HomePage> {
 
   void validator() {
     if (_form.currentState.validate()) {
-      print('validated');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Cadastrado com sucesso'),
+        ),
+      );
     } else {
-      print('not validated');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Existem campos a serem preenchidos'),
+        ),
+      );
     }
   }
 
