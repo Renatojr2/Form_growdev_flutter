@@ -4,8 +4,9 @@ class Endereco {
   String bairro;
   String uf;
   String cidade;
+  String pais;
 
-  Endereco({this.bairro, this.cep, this.cidade, this.rua, this.uf});
+  Endereco({this.bairro, this.cep, this.cidade, this.rua, this.uf, this.pais});
 
   factory Endereco.fromJson(Map<String, dynamic> json) {
     return Endereco(

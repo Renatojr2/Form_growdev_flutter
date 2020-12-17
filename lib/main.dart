@@ -1,6 +1,5 @@
+import 'package:appform/pages/List/list_user.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/home/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xff6000BF),
       ),
-      home: HomePage(),
+      home: ListUser(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:appform/models/user_model.dart';
 import 'package:appform/pages/widgets/form_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   GlobalKey<FormState> _form = GlobalKey();
-
+  User _user;
   void validator() {
     if (_form.currentState.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
           content: Text('Cadastrado com sucesso'),
         ),
       );
+      Navigator.of(context).pop(_user);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -41,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: SingleChildScrollView(
-                  child: FormWidget(_form),
+                  child: FormWidget(),
                 ),
               ),
               Container(
@@ -51,7 +53,9 @@ class _HomePageState extends State<HomePage> {
                     color: Theme.of(context).primaryColor,
                   ),
                   child: Text('Cadastrar'),
-                  onPressed: validator,
+                  onPressed: () {
+                    validator();
+                  },
                 ),
               )
             ],
