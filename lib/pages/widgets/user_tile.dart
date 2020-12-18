@@ -13,6 +13,16 @@ class UserTile extends StatelessWidget {
     return Dismissible(
       key: Key(user.name),
       onDismissed: onDismissed,
+      background: Container(
+        color: Colors.red,
+        child: Align(
+          alignment: Alignment(-0.9, 0),
+          child: Icon(
+            Icons.delete,
+            color: Colors.white,
+          ),
+        ),
+      ),
       child: ListTile(
         leading: Icon(Icons.person),
         title: Text(user.name),
